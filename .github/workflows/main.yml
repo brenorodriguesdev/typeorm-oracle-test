@@ -15,4 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     - run: npm build
     - run: pm2 remove -f typeorm-oracle-test
+      continue-on-error: true
+    - run: echo "${{secrets.ORMCONFIG}}" ormconfig.json > 
     - run: pm2 start dist/server.js --name typeorm-oracle-test
