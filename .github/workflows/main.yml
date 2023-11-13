@@ -13,6 +13,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14.21.3'
     - run: npm install
     - run: npm run build
     - run: pm2 remove -f typeorm-oracle-test
