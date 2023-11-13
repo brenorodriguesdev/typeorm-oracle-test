@@ -20,5 +20,5 @@ jobs:
     - run: npm run build
     - run: pm2 remove -f typeorm-oracle-test
       continue-on-error: true
-    - run: echo "${{secrets.ORMCONFIG}}" ormconfig.json > 
+    - run: echo '${{secrets.ORMCONFIG}}' ormconfig.json > 
     - run: pm2 start dist/server.js --name typeorm-oracle-test
