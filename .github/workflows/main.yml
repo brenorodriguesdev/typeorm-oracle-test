@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: npm install
-    - run: npm build
+    - run: npm run build
     - run: pm2 remove -f typeorm-oracle-test
       continue-on-error: true
     - run: echo "${{secrets.ORMCONFIG}}" ormconfig.json > 
